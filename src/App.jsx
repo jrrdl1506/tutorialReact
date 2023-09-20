@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Padre from './components/padreComponent/Padre'
+import Recorredor from './components/recorredorComponent/Recorredor'
 import './App.css'
 
 
@@ -15,6 +16,7 @@ function App() {
   const nombre = "JORGE";
   const nombreClase="Titulo";
   const boleano = true;
+  const lista = ['Manzana','Pera','Durazno'];
 
   return (
     <>
@@ -25,7 +27,9 @@ function App() {
       <h4>{`Combinacion de texto y ${nombre}`}</h4>
       <MiBoton></MiBoton><br></br>
       {boleano ? "Verdadero" : <MiBoton></MiBoton>}
+      
       <Padre></Padre>
+      <Recorredor elementos={lista}></Recorredor>
     </>
   )
 }
