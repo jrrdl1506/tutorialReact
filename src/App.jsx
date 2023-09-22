@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+
 import Padre from './components/padreComponent/Padre'
 import Recorredor from './components/recorredorComponent/Recorredor'
+import UseState from './components/useStateComponent/UseState'
+
 import './App.css'
 
 
@@ -30,6 +33,7 @@ function App() {
       
       <Padre></Padre>
       <Recorredor elementos={lista}></Recorredor>
+      <UseState></UseState>
     </>
   )
 }
