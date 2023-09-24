@@ -5,6 +5,8 @@ import viteLogo from '/vite.svg'
 import Padre from './components/padreComponent/Padre'
 import Recorredor from './components/recorredorComponent/Recorredor'
 import UseState from './components/useStateComponent/UseState'
+import FormNoControl from './components/formNoControlComponent/FormNoControlComponent'
+import FormControl from './components/formControlComponent/formControl'
 
 import './App.css'
 
@@ -34,6 +36,8 @@ function App() {
       <Padre></Padre>
       <Recorredor elementos={lista}></Recorredor>
       <UseState></UseState>
+      <FormNoControl></FormNoControl>
+      <FormControl></FormControl>
     </>
   )
 }
