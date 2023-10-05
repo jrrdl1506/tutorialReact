@@ -12,7 +12,12 @@ const FormControl = () =>{
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(todo.title,todo.description,todo.state);
+        setTodo({
+            ...todo,
+            [e.target.name]:
+            e.target.type === "checkbox" ? e.target.checked : e.target.value});
+        
+        console.log(todo.title + " " + todo.state + " " + todo.description);
     };
 
     return(
@@ -23,24 +28,34 @@ const FormControl = () =>{
                 <input 
                 name="title" placeholder="titulo"
                 value={todo.title}
-                onChange={(e)=> setTodo({...todo,title:e.target.value})}>
+                onChange={handleSubmit}>
                 </input><br/>
 
                 <textarea 
                 name="description" placeholder="descripcion"
                 value={todo.description}
-                onChange={(e)=> setTodo({...todo,description:e.target.value})}> 
+                onChange={handleSubmit}> 
                 </textarea><br/>
 
                 <select name="state" placeholder="estado"
                 value={todo.state}
-                onChange={(e)=> setTodo({...todo,state:e.target.value})}>
+                onChange={handleSubmit}>
                     <option value="pendiente">Pendiente</option>
                     <option value="completado">Completado</option>
                 </select><br/>
 
                
                 <br/>
+                <div>
+                    <input
+                        type="checkbox"
+                        name="priority"
+                        className="form-check-input"
+                        id="inputCheck"
+                        checked={priority}
+                        onChange={handleChange}
+                    ></input>
+                </div>
 
                 <button type="submit" >
                     Procesar
